@@ -14,6 +14,7 @@ public class Mastermind {
 		this.verif = new String[4];
 	}
 	
+	// generate a random number
 	public String[] genCode() {
 		
 		Random rand = new Random();
@@ -23,6 +24,7 @@ public class Mastermind {
 		return str_alea.split("");
 	}
 	
+	// get user input
 	public String[] recup_saisie() {
 		
 		String saisie = sc.nextLine();
@@ -30,6 +32,7 @@ public class Mastermind {
 		return saisie.split("");
 	}
 	
+	// compare user input with secret code
 	public String[] verif_code(String[] code, String[] saisie) {
 		
 		Integer index = 0;

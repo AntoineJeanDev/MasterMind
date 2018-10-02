@@ -11,12 +11,12 @@ public class Main {
 		// generating code
 		String[] code = mastermind.genCode();
 		
-		// some var
+		// some vars
 		Integer compt = 1;
 		Integer victoire = 0;
 		Integer defaite = 0;
-		String[] saisie;
-		String[] verif;
+		String[] saisie = new String[code.length];
+		String[] verif = new String[code.length];
 		
 		// game loop
 		do {
@@ -41,6 +41,7 @@ public class Main {
 		
 		mastermind.sc.close();
 		
+		// check if win or lose
 		if (victoire == 1)
 			System.out.println("gagné en " + compt + " coups");
 		else if (defaite == 1)
