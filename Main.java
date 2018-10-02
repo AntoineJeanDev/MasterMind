@@ -15,6 +15,8 @@ public class Main {
 		Integer compt = 1;
 		Integer victoire = 0;
 		Integer defaite = 0;
+		String[] saisie;
+		String[] verif;
 		
 		// game loop
 		do {
@@ -22,11 +24,11 @@ public class Main {
 			System.out.println("Code is : " + String.join("", code));
 			System.out.println("Essai n° " + compt);
 			
-			String[] saisie = mastermind.recup_saisie();
+			saisie = mastermind.recup_saisie();
 			
 			System.out.println(String.join(" ", saisie));
 			
-			String[] verif = mastermind.verif_code(code, saisie);
+			verif = mastermind.verif_code(code, saisie);
 			
 			if (String.join("", verif).equals("VVVV"))
 				victoire = 1;
