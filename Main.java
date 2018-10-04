@@ -41,8 +41,6 @@ public class Main {
 			
 		} while (victoire == 0 && defaite == 0);
 		
-		mastermind.sc.close();
-		
 		// check if win or lose
 		mastermind.showResults(victoire, defaite, compt);
 			
