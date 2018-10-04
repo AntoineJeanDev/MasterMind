@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public class Main {
 
@@ -28,11 +28,13 @@ public class Main {
 			
 			System.out.println(String.join(" ", saisie));
 			
+			// compare verifString[] and codeString[]
 			verif = mastermind.verif_code(code, saisie);
 			
-			if (String.join("", verif).equals("VVVV"))
-				victoire = 1;
-			if (compt == 8)
+			// check if 
+			if (mastermind.verifWin(verif))
+				victoire = 1;	
+			if (mastermind.verifLose(compt))
 				defaite = 1;
 			
 			compt++;
@@ -42,10 +44,8 @@ public class Main {
 		mastermind.sc.close();
 		
 		// check if win or lose
-		if (victoire == 1)
-			System.out.println("gagné en " + compt + " coups");
-		else if (defaite == 1)
-			System.out.println("perdu");
+		mastermind.showResults(victoire, defaite, compt);
+			
 
 	}
 

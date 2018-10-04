@@ -57,4 +57,28 @@ public class Mastermind {
 		
 		return verif;
 	}
+	
+	// check if verifString[] == "VVVV" (victory)
+	public boolean verifWin (String[] sVerif) {
+		if(String.join("", sVerif).equals("VVVV"))
+			return true;
+		
+		return false;
+	}
+	
+	// check if compt == 8 (lose)
+	public boolean verifLose (Integer i) {
+		if (i == 8)
+			return true;
+		
+		return false;
+	}
+	
+	// show results victory/defeat
+	public void showResults(Integer victoire, Integer defaite, Integer i) {
+		if (victoire == 1)
+			System.out.println("gagné en " + (i-1) + " coups");
+		else if (defaite == 1)
+			System.out.println("perdu");
+	}
 }
