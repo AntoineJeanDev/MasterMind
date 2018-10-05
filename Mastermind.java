@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Mastermind {
 	
-	private Scanner sc;
+	public Scanner sc;
 	private String[] verif;
 
 	public Mastermind() {
@@ -27,7 +27,7 @@ public class Mastermind {
 	// get user input
 	public String[] recup_saisie() {
 		
-		String saisie = sc.nextLine();
+		String saisie = this.sc.nextLine();
 		
 		return saisie.split("");
 	}
@@ -75,12 +75,15 @@ public class Mastermind {
 	}
 	
 	// show results victory/defeat
-	public void showResults(Integer victoire, Integer defaite, Integer i) {
-		sc.close();
+	public Integer showResults(Integer victoire, Integer defaite, Integer i) {
 		
 		if (victoire == 1)
 			System.out.println("gagné en " + (i-1) + " coups");
 		else if (defaite == 1)
 			System.out.println("perdu");
+		
+		System.out.println("Voulez-vous recommencer? 1/0?");
+		
+		return sc.nextInt();
 	}
 }

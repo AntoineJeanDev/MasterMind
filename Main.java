@@ -4,6 +4,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		Integer recommencer; 
+		
+		do {
 		
 		// mastermind construction
 		Mastermind mastermind = new Mastermind();
@@ -42,8 +45,14 @@ public class Main {
 		} while (victoire == 0 && defaite == 0);
 		
 		// check if win or lose
-		mastermind.showResults(victoire, defaite, compt);
-			
+		recommencer = mastermind.showResults(victoire, defaite, compt);
+		
+		if (recommencer == 0)
+			mastermind.sc.close();
+		
+		} while (recommencer == 1);
+		
+		System.out.println("Bye Bye");
 
 	}
 
